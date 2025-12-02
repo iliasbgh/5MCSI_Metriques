@@ -53,18 +53,18 @@ def extract_minutes(date_string):
 @app.route('/api/commits-data')
 def commits_data():
     url = "https://api.github.com/repos/OpenRSI/5MCSI_Metriques/commits"
-    response = requests.get(url).json()
+    headers = {"User-Agent": "Mozilla/5.0"}  # OBLIGATOIRE
+    response = requests.get(url, headers=headers).json()
 
     minutes_list = []
 
     for commit in response:
-        date_str = commit["commit"]["author"]["date"]   # ex: "2024-02-11T11:57:27Z"
+        date_str = commit["commit"]["author"]["date"]
         date_object = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%SZ")
         minutes_list.append(date_object.minute)
 
     counts = Counter(minutes_list)
 
-    # Format Google Charts
     data = [["Minute", "Commits"]]
     for minute, nb in sorted(counts.items()):
         data.append([minute, nb])
