@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #f5f5f7;
+            background: linear-gradient(135deg, #e0e0f8, #f5f5f7);
             color: #1d1d1f;
             display: flex;
             justify-content: center;
@@ -20,10 +20,10 @@
 
         .container {
             width: 420px;
-            background: #ffffff;
+            background: linear-gradient(145deg, #ffffff, #f0f0ff);
             padding: 40px 45px;
             border-radius: 28px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             animation: fadeIn 1s ease-out;
         }
 
@@ -32,34 +32,35 @@
             font-size: 32px;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             letter-spacing: -0.5px;
+            color: #0a84ff;
         }
 
         .subtext {
             text-align: center;
             font-size: 15px;
-            color: #6e6e73;
+            color: #5a5a5f;
             margin-bottom: 30px;
         }
 
         /* ----- CHAMPS DE FORMULAIRES ----- */
         input, textarea {
             width: 100%;
-            border: 1px solid #d2d2d7;
+            border: 1px solid #c7c7cc;
             padding: 14px;
             border-radius: 12px;
             font-size: 16px;
             margin-top: 18px;
             background: #f9f9fb;
-            transition: border-color .3s ease, background .3s ease;
+            transition: border-color .3s ease, background .3s ease, box-shadow .3s ease;
         }
 
         input:focus, textarea:focus {
             outline: none;
-            border-color: #0071e3;
+            border-color: #34c759;
             background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(0,113,227,0.15);
+            box-shadow: 0 0 0 4px rgba(52,199,89,0.2);
         }
 
         textarea {
@@ -72,18 +73,19 @@
             width: 100%;
             margin-top: 30px;
             padding: 15px;
-            background: #0071e3;
+            background: linear-gradient(90deg, #ff9500, #ff5e3a);
             border: none;
             border-radius: 12px;
             color: white;
             font-size: 17px;
             font-weight: 600;
             cursor: pointer;
-            transition: background .3s;
+            transition: background .3s, transform .2s;
         }
 
         button:hover {
-            background: #0a84ff;
+            background: linear-gradient(90deg, #ff5e3a, #ff9500);
+            transform: translateY(-2px);
         }
 
         /* Anim d’apparition */
